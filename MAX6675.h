@@ -14,10 +14,16 @@
 #include "WProgram.h"
 #endif
 
+enum unit {
+  RAW,
+  CELSIUS,
+  FAHRENHEIT
+};
+
 class MAX6675
 {
   public:
-    MAX6675(uint8_t CS_pin, uint8_t SO_pin, uint8_t SCK_pin, uint8_t units);
+    MAX6675(uint8_t CS_pin, uint8_t SO_pin, uint8_t SCK_pin, unit units);
     float read_temp();
   private:
     uint8_t _CS_pin;

@@ -7,7 +7,7 @@
 
 #include <MAX6675.h>
 
-MAX6675::MAX6675(uint8_t CS_pin, uint8_t SO_pin, uint8_t SCK_pin, uint8_t units)
+MAX6675::MAX6675(uint8_t CS_pin, uint8_t SO_pin, uint8_t SCK_pin, unit units)
 {
     pinMode(CS_pin, OUTPUT);
     pinMode(SO_pin, INPUT);
@@ -87,16 +87,12 @@ float MAX6675::read_temp()
       this out!).  Now multiply by 0.25.  I tried to avoid float math but
       it is tough to do a good conversion to ˚F.  THe final value is converted
       to an int and returned at x10 power.
-
-      2 = temp in deg F
-      1 = temp in deg C
-      0 = raw chip value 0-4095
     */
-    if(_units == 2) {
+    if(_units == FAHRENHEIT) {
         temp = (value*0.25) * 9.0/5.0 + 32.0;
-    } else if(_units == 1) {
+    } else if(_units == CELSIUS) {
         temp = (value*0.25);
-    } else {
+    } else { // RAW chip value 0-4095
         temp = value;
     }
 

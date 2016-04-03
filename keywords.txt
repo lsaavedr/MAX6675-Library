@@ -6,6 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
+unit	KEYWORD1
 MAX6675	KEYWORD1
 
 #######################################
@@ -14,3 +15,9 @@ MAX6675	KEYWORD1
 
 read_temp	KEYWORD2
 
+######################################
+# Constants (LITERAL1)
+#######################################
+RAW	LITERAL1
+CELSIUS	LITERAL1
+FAHRENHEIT	LITERAL1
